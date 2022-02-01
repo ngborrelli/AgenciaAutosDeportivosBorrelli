@@ -63,13 +63,20 @@ nav ul li a {
     color: #f0f0f0;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: #ffffff;
+    animation-name: animacionMenu;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
 }
 
-nav ul li a:hover {
-    color: white;
-}
+@keyframes animacionMenu {
+    0%   {color: #FFDE77;}
+    25%  {color: #F28274;}
+    50%  {color: #DE5873;}
+    75%  {color: #F28274;}
+    100% {color: #FFDE77;}
+  }
 
 section.contenidoPrincipal {
     grid-area: contenido;
@@ -175,7 +182,13 @@ footer {
 }
 
 .cajaMarcaImagen img {
+    transition: transform .5s ease;
+    overflow: hidden;
     height: 100px;
+}
+
+.cajaMarcaImagen:hover img {
+    transform: scale(1.2);
 }
 
 .cajaMarcaLink {
